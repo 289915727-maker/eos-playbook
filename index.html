@@ -244,6 +244,65 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC'
   .tab-panel { display:block !important; }
   .product-panel { display:block !important; }
 }
+
+/* ===== CASE STUDY ===== */
+.case-hero { background:linear-gradient(135deg,var(--navy),var(--navy-dark)); border-radius:var(--radius); padding:28px 24px; color:white; margin-bottom:24px; }
+.case-hero .case-tag { display:inline-block; background:var(--teal); color:white; font-size:13px; font-weight:600; padding:3px 12px; border-radius:20px; margin-bottom:12px; }
+.case-hero h3 { font-size:22px; font-weight:700; margin-bottom:8px; }
+.case-hero p { color:rgba(255,255,255,0.75); font-size:15px; line-height:1.8; }
+.case-meta { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-top:16px; }
+.case-meta-item { background:rgba(255,255,255,0.1); border-radius:8px; padding:10px 14px; }
+.case-meta-item .lbl { font-size:12px; color:rgba(255,255,255,0.6); margin-bottom:2px; }
+.case-meta-item .val { font-size:15px; font-weight:600; color:white; }
+
+.case-sub { font-size:18px; font-weight:700; color:var(--navy); margin:28px 0 16px; padding-left:12px; border-left:3px solid var(--teal); }
+
+.case-card { background:var(--white); border-radius:var(--radius); border:1px solid var(--gray-200); box-shadow:var(--shadow-sm); padding:24px; margin-bottom:16px; }
+.case-card h4 { font-size:17px; color:var(--navy); margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+.case-card .case-body { font-size:15px; color:var(--gray-700); line-height:1.8; }
+.case-card .case-body p { margin-bottom:10px; }
+.case-card .case-body ul { padding-left:20px; margin:8px 0; }
+.case-card .case-body li { margin-bottom:6px; }
+
+.step-timeline { display:flex; flex-direction:column; gap:0; margin:20px 0; }
+.step-item { display:flex; gap:16px; position:relative; padding-bottom:24px; }
+.step-item:last-child { padding-bottom:0; }
+.step-item::before { content:''; position:absolute; left:19px; top:40px; bottom:0; width:2px; background:var(--gray-200); }
+.step-item:last-child::before { display:none; }
+.step-num { width:40px; height:40px; border-radius:50%; background:var(--teal); color:white; font-size:14px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; z-index:1; }
+.step-content { flex:1; }
+.step-content .step-title { font-size:16px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.step-content .step-desc { font-size:14px; color:var(--gray-700); line-height:1.7; }
+.step-content .step-tip { background:var(--teal-bg); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:13px; color:var(--teal); }
+.step-content .step-priority { display:inline-block; font-size:12px; font-weight:600; padding:2px 8px; border-radius:10px; margin-left:8px; }
+.priority-high { background:var(--red-bg); color:var(--red); }
+.priority-mid { background:var(--amber-bg); color:var(--amber); }
+
+.result-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin:16px 0; }
+.result-card { background:var(--teal-bg); border-radius:var(--radius-sm); padding:16px; text-align:center; }
+.result-card .result-val { font-size:24px; font-weight:800; color:var(--teal); }
+.result-card .result-lbl { font-size:13px; color:var(--gray-600); margin-top:4px; }
+
+.factor-table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
+.factor-table th { background:var(--navy); color:white; padding:10px 12px; text-align:left; font-weight:600; font-size:13px; }
+.factor-table td { padding:10px 12px; border-bottom:1px solid var(--gray-200); vertical-align:top; color:var(--gray-700); line-height:1.6; }
+.factor-table tr:nth-child(even) td { background:var(--gray-50); }
+.factor-table .factor-name { font-weight:600; color:var(--navy); white-space:nowrap; }
+.factor-table .star { color:var(--amber); font-size:13px; }
+
+.method-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin:16px 0; }
+.method-card { background:var(--white); border-radius:var(--radius); border:1px solid var(--gray-200); padding:20px; }
+.method-card .method-num { font-size:28px; font-weight:800; color:var(--teal-bg); line-height:1; margin-bottom:8px; }
+.method-card h4 { font-size:16px; color:var(--navy); margin-bottom:8px; }
+.method-card .method-goal { font-size:13px; color:var(--gray-600); margin-bottom:12px; font-style:italic; }
+.method-card .method-questions { padding-left:16px; }
+.method-card .method-questions li { font-size:14px; color:var(--gray-700); margin-bottom:6px; line-height:1.6; }
+.method-card .method-output { background:var(--teal-bg); border-radius:6px; padding:8px 12px; margin-top:10px; font-size:13px; color:var(--teal); }
+
+.case-highlight { background:linear-gradient(135deg,var(--amber-bg),var(--teal-bg)); border-radius:var(--radius); padding:20px 24px; margin:20px 0; border-left:4px solid var(--amber); }
+.case-highlight h4 { color:var(--navy); font-size:16px; margin-bottom:8px; }
+.case-highlight p { font-size:14px; color:var(--gray-700); line-height:1.7; margin:0; }
+
 </style>
 </head>
 <body>
@@ -254,7 +313,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC'
   <nav>
     <a href="#products">产品价值</a><a href="#battlemap">作战地图</a><a href="#insights">八大经验</a>
     <a href="#faq">话术库</a><a href="#industry">行业模板</a>
-    <a href="#dm">决策人策略</a><a href="#checklist">行动清单</a><a href="#tools">工具资源</a>
+    <a href="#dm">决策人策略</a><a href="#checklist">行动清单</a><a href="#tools">工具资源</a><a href="#cases">实战案例</a>
   </nav>
 </header>
 
@@ -280,6 +339,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC'
       <li><span class="toc-num">06</span><a href="#dm">决策人影响策略 <span class="toc-desc">针对IT/采购/高管三类角色的差异化策略</span></a></li>
       <li><span class="toc-num">07</span><a href="#checklist">行动检查清单 <span class="toc-desc">17项标准动作逐项打勾确保不遗漏</span></a></li>
       <li><span class="toc-num">08</span><a href="#tools">工具与资源下载 <span class="toc-desc">风险告知函/评估报告/话术模板等9项工具</span></a></li>
+      <li><span class="toc-num">09</span><a href="#cases">一线实战案例参考 <span class="toc-desc">凯远×深信服叮咚买菜换新突破 + 5维15问方法论</span></a></li>
     </ul>
   </div>
 </section>
@@ -1020,6 +1080,329 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC'
       <a class="t-dl" href="https://pan.sangfor.com/index.html#doc/enterprise/2115735?key=17847016211367459" target="_blank" rel="noopener">📦 点击进入工具资源库</a>
     </div>
   </div>
+</section>
+
+
+<!-- ===== 9. CASE STUDIES ===== -->
+<section class="section" id="cases">
+  <div class="section-title"><span class="dot"></span>一线实战案例参考 <span class="num">09</span></div>
+  <p style="color:var(--gray-600);font-size:16px;margin-bottom:24px;">以下案例来自伙伴凯远与深信服联合完成的真实EOS换新项目，涵盖完整作战过程、关键步骤拆解及可复制方法论沉淀。</p>
+
+  <!-- ===== CASE 1: 叮咚买菜 EOS换新突破 ===== -->
+  <div class="case-hero">
+    <span class="case-tag">案例一 · 联合作战</span>
+    <h3>从产品交付转变为价值交付：伙伴凯远与深信服完成EOS客户换新突破</h3>
+    <p>互联网企业客户180+台设备存量，75台WOC已EOS——伙伴凯远与深信服原厂铁三角协同，从"设备老了该换"升级为"整体网络架构能力升级"，实现从单次销售到长期安全体系建设合作的价值跃迁。</p>
+    <div class="case-meta">
+      <div class="case-meta-item"><div class="lbl">客户</div><div class="val">叮咚买菜（壹佰米）</div></div>
+      <div class="case-meta-item"><div class="lbl">行业</div><div class="val">互联网企业</div></div>
+      <div class="case-meta-item"><div class="lbl">伙伴</div><div class="val">凯远</div></div>
+      <div class="case-meta-item"><div class="lbl">产品线</div><div class="val">WOC → AF</div></div>
+      <div class="case-meta-item"><div class="lbl">项目金额</div><div class="val">已完成44.17万</div></div>
+      <div class="case-meta-item"><div class="lbl">时间线</div><div class="val">25年12月 → 26年5月</div></div>
+    </div>
+  </div>
+
+  <!-- 案例背景 -->
+  <div class="case-sub">案例背景 — 伙伴凯远在EOS换新中的困境</div>
+  <div class="case-card">
+    <div class="case-body">
+      <p>EOS政策推出后，凯远作为深信服核心合作伙伴，立马协同原厂向客户推广传递EOS政策，但在梳理客户资产时发现，多家老客户的AF/AC设备已进入EOS状态，客户决策层并无换新紧迫感。伙伴在前期沟通中只能谈"设备老了该换"，被客户以"预算不足""还能用"为由搁置，陷入低价竞争僵局。</p>
+      <p style="font-weight:600;color:var(--navy);margin-top:14px;">主要困境：</p>
+      <ul>
+        <li><strong>持续续费客户：</strong>客户无法正常续费，但大部分客户预算年初已定续费预算，续费预算与新项目预算独立，陷入僵局。</li>
+        <li><strong>未持续续费客户：</strong>认为深信服产品在EOS状态下还可以正常使用，相比换新更愿意"赌"一把继续使用设备。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 联合作战方案 -->
+  <div class="case-sub">联合作战 — 原厂与凯远多角色协同赋能</div>
+  <div class="case-card">
+    <h4>📋 EOS客户沙盘盘点</h4>
+    <div class="case-body">
+      <ul>
+        <li>原厂服务销售梳理凯远所有存量EOS客户清单（包含客户名称、设备型号、维保状态、EOS时间、历史续费情况）</li>
+        <li>客户优先级划分（存量EOS客户换新优先级评分表）——服务粘性维度：数智化服务平台客户活跃度、是否持续续费、近两年有无新增订单、是否泛KA客户、EOS换新商机金额 > 20万</li>
+      </ul>
+    </div>
+  </div>
+  <div class="case-card">
+    <h4>📅 月度客户经营会（客服面向伙伴"生产流"）</h4>
+    <div class="case-body">
+      <ul>
+        <li>伙伴市场负责人 + 客服负责人与原厂服务销售共同参加，月度同步沟通上月进展结果和本月计划</li>
+        <li>季度基于整体结果分析策略落地有效性以及持续优化</li>
+        <li>成功案例经验分享、疑难客户/项目应对措施共创</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 客户画像与风险 -->
+  <div class="case-sub">客户画像与EOS换新风险</div>
+  <div class="case-card">
+    <div class="case-body">
+      <p><strong>客户画像：</strong>互联网企业客户，在用深信服设备180+台（WOC、AF、SSL VPN、AC），其中75台WOC、40+台AC已EOS或接近EOS，每年都会持续续费。</p>
+      <p><strong>客户原先分支组网：</strong>传统WOC架构，各分支跟总部只是单纯组网，无其他能力。若只是引导设备换新，客户无其他驱动力，且有第三方（某为）竞争的风险。前期推动EOS换新进展很慢，未有效推动。</p>
+      <p style="font-weight:600;color:var(--red);margin-top:14px;">EOS换新风险：</p>
+      <ul>
+        <li><strong>客户预算风险：</strong>预算吃紧、客户整体期望设备利旧，继续使用</li>
+        <li><strong>伙伴风险：</strong>换新立项涉及第三方竞争</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 价值交付三步法 -->
+  <div class="case-sub">联合作战 — 从产品交付转变为价值交付</div>
+  <div class="case-card" style="border-left:4px solid var(--teal);">
+    <h4>第一步：制造客户换新紧迫感</h4>
+    <div class="case-body">
+      <ul>
+        <li><strong>业务安全性风险：</strong>随着客户业务发展，对各分支安全防护能力要求增加，当前整体方案无安全防护能力</li>
+        <li><strong>业务扩容风险：</strong>客户出口带宽进行了扩容，原有设备不足以支撑当前业务带宽</li>
+        <li><strong>业务连续性风险：</strong>EOS产品技术支持力度降低，当前分支设备若故障，快速恢复实效性无法保障——WOC EOS后备件、响应变差，性能跟不上带宽扩张</li>
+      </ul>
+    </div>
+  </div>
+  <div class="case-card" style="border-left:4px solid var(--teal);">
+    <h4>第二步：产品价值认可 — 新方案赋能客户业务能力提升</h4>
+    <div class="case-body">
+      <ul>
+        <li><strong>单纯组网 → 安全性组网：</strong>不是只站在换产品的角度，而是站在新方案能帮助客户解决更多问题、提升客户整体能力的角度——安全能力提升</li>
+        <li><strong>易运维：</strong>安全策略可视化，使用BBC统一纳管防火墙</li>
+        <li><strong>技术牵头：</strong>梳理客户整体使用设备情况，优先选择第一批重点EOS设备（负载高、故障次数多），以设备性能不足并潜在影响业务稳定运行为突破口推动高层认可</li>
+      </ul>
+    </div>
+  </div>
+  <div class="case-card" style="border-left:4px solid var(--teal);">
+    <h4>第三步：技术协同市场价值落地</h4>
+    <div class="case-body">
+      <ul>
+        <li>技术团队对客户的技术保障确保客户持续满意，现场协同市场方案价值汇报，打消客户方案疑虑，推动项目立项</li>
+        <li>基于原有方案叠加安全能力价值说明，立项层面直接屏蔽友商方案</li>
+        <li>完整割接迁移方案，保障业务平稳，同时匹配企业中长期IT规划</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 价值交付推动持续产出 -->
+  <div class="case-sub">价值交付推动持续产出</div>
+  <div class="case-card">
+    <div class="case-body">
+      <p>因预算吃紧，客户首批只采购了12台AF设备替换原先WOC。交付团队在交付期间严格按照"价值交付"要求，完成新旧设备的平滑割接与策略迁移，保障业务零中断，赢得了客户对深信服和凯远对本次方案的深度信任。</p>
+    </div>
+  </div>
+
+  <!-- 收益与结果 -->
+  <div class="case-sub">收益与结果</div>
+  <div class="result-grid">
+    <div class="result-card">
+      <div class="result-val">62台</div>
+      <div class="result-lbl">AF新购（替换62台WOC）</div>
+    </div>
+    <div class="result-card">
+      <div class="result-val">25台</div>
+      <div class="result-lbl">AC EOS设备替换</div>
+    </div>
+    <div class="result-card">
+      <div class="result-val">44.17万</div>
+      <div class="result-lbl">合计完成金额</div>
+    </div>
+    <div class="result-card">
+      <div class="result-val">14.96万</div>
+      <div class="result-lbl">预计剩余换新产出</div>
+    </div>
+  </div>
+  <div class="case-card" style="background:var(--teal-bg);border-color:var(--teal);">
+    <div class="case-body">
+      <p style="font-weight:600;color:var(--navy);">凯远收益：</p>
+      <p>客户签订后续框架，为后续EOS设备替换埋下持续增购伏笔。实现了从"单次设备销售"向"长期安全体系建设合作"的价值跃迁。</p>
+      <p style="font-weight:600;color:var(--navy);margin-top:12px;">客户收益：</p>
+      <p>客户各分支安全防护能力提升，技术创造业务价值。</p>
+    </div>
+  </div>
+
+  <!-- 成功案例复制 -->
+  <div class="case-highlight">
+    <h4>✨ 成功案例复制</h4>
+    <p>凯远以"产品交付转向价值交付"后，在其他EOS换新场景中持续带来收益：</p>
+    <ul style="margin-top:8px;padding-left:20px;">
+      <li><strong>某生物制药客户：</strong>从换EOS防火墙到整体安全运营能力提升，从替换防火墙变为MSS安全运营方案落地</li>
+      <li><strong>爱*收：</strong>从换EOS防火墙到整体安全运营能力提升，基于云威胁情报网关价值成功推动AF新购落地</li>
+    </ul>
+  </div>
+
+  <!-- ===== 5步关键推动过程拆解 ===== -->
+  <div class="case-sub">项目详解 — 5步关键推动过程拆解</div>
+  <div class="step-timeline">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">设备梳理 <span class="step-priority priority-high">★★★</span></div>
+        <div class="step-desc">
+          原厂服务销售梳理凯远所有存量EOS客户清单（客户名称、设备型号、维保状态、EOS时间、历史续费情况）；客户优先级划分（换新优先级评分表）；月度客户经营会同步进展与计划。
+        </div>
+        <div class="step-tip">💡 EOS设备清单标注每台设备的EOS倒计时和风险等级，以及客户优先级。月度经营会可结合渠道"生产流"。</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">持续影响运维 <span class="step-priority priority-high">★★★</span></div>
+        <div class="step-desc">
+          从三个维度制造客户运维换新紧迫感：①业务安全性风险——各分支安全防护能力要求增加；②业务扩容风险——原有设备不足以支撑当前业务带宽；③业务连续性风险——EOS产品技术支持力度降低，故障快速恢复无法保障。
+        </div>
+        <div class="step-tip">💡 要从真实风险维度影响客户，制造紧迫点，而不是一昧推产品、推项目。关系维护频率保持每月至少1次。</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">影响决策层 <span class="step-priority priority-high">★★★★★</span></div>
+        <div class="step-desc">
+          从"产品讲解"维度转向"业务价值"维度面向客户进行新的建设方案讲解：①单纯组网→安全性组网，站在新方案能帮客户解决更多问题的角度；②易运维——安全策略可视化，使用BBC统一纳管防火墙；③技术牵头梳理设备情况，优先选择重点EOS设备推动高层认可。
+        </div>
+        <div class="step-tip">💡 换新不止是换新设备承接原有功能，而是让客户感知到是升级整体架构能力。价值驱动 > 政策驱动。</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">推动立项 <span class="step-priority priority-high">★★★★★</span></div>
+        <div class="step-desc">
+          技术协同市场价值落地：①技术团队现场协同市场方案价值汇报，打消客户方案疑虑；②基于原有方案叠加安全能力价值说明，立项层面直接屏蔽友商方案；③完整割接迁移方案保障业务平稳，匹配企业中长期IT规划。
+        </div>
+        <div class="step-tip">💡 持续服务好客户，让客户持续对产品满意、对深信服满意，是推动整体EOS落地的重要前提。</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <div class="step-title">商务落地 <span class="step-priority priority-high">★★★</span></div>
+        <div class="step-desc">
+          因预算吃紧，客户首批只采购12台AF设备替换原先WOC。交付团队严格按照"价值交付"要求，完成新旧设备平滑割接与策略迁移，保障业务零中断，赢得客户深度信任，进入框架持续产出。
+        </div>
+        <div class="step-tip">💡 客服-渠道-销售的三角协同模型。关键是"交接不丢信息"，每一次交付都"价值交付"，持续让客户感受到专业力。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 成功核心要素总结 -->
+  <div class="case-sub">成功核心要素总结 — 识别要早、影响要深、沟通要准、证据要硬、协同要快</div>
+  <table class="factor-table">
+    <thead>
+      <tr>
+        <th style="width:22%;">核心要素</th>
+        <th style="width:38%;">具体做法</th>
+        <th style="width:25%;">为什么关键</th>
+        <th style="width:15%;">可复制性</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="factor-name">市场铁三角（销售、售前、售后）配合攻坚</td>
+        <td>客服：讲痛点风险，WOC EOS后备件、响应变差，从运维角度证实业务风险；售前：讲替换方案价值，输出AF替换方案，解决性能不足、补齐安全防护；销售：商务层面推动立项，面向高层把技术问题转化为管理风险、合规风险、业务连续性风险</td>
+        <td>铁三角协同、环环相扣，更高效</td>
+        <td><span class="star">★★★★★</span><br>适用于所有行业</td>
+      </tr>
+      <tr>
+        <td class="factor-name">提前布局，在预算前传递风险</td>
+        <td>推动高层知晓设备EOS风险；客户预算情况需要持续跟进</td>
+        <td>客户一旦预算落定就很难追加——必须在"钱还没花"之前让客户知道"这笔钱必须花"</td>
+        <td><span class="star">★★★★★</span><br>适用于所有行业</td>
+      </tr>
+      <tr>
+        <td class="factor-name">EOS风险场景化，不是讲政策是讲整体网络架构怎么升级</td>
+        <td>"产品交付"转变为"价值交付"</td>
+        <td>价值驱动 > 政策驱动，要让客户感知额外换新价值点</td>
+        <td><span class="star">★★★★</span><br>根据不同行业定制业务场景</td>
+      </tr>
+      <tr>
+        <td class="factor-name">持续服务好，才能让客户持续感知产品价值</td>
+        <td>数智化服务平台服务通路传递、客户服务体验升级、感知更好</td>
+        <td>客户使用产品持续满意、增购意愿才会大大加强</td>
+        <td><span class="star">★★★★★</span><br>适用于所有有续保谈判的客户</td>
+      </tr>
+      <tr>
+        <td class="factor-name">厂商与伙伴经营会要持续</td>
+        <td>月度经营会（着重标记下一步待办），输出文字记录同步伙伴、原厂各层级关键人</td>
+        <td>协同配合，解决伙伴能力、意愿问题，共同制胜</td>
+        <td><span class="star">★★★★★</span><br>适用于所有行业</td>
+      </tr>
+      <tr>
+        <td class="factor-name">厂商跟伙伴一定要梳理清客户设备</td>
+        <td>厂商提供具体EOS设备清单；伙伴客户台账能确定设备具体应用在客户什么场景，对客户的重要程度</td>
+        <td>深信服给的只是设备本身信息，但客户不清楚设备在客户侧究竟发挥什么作用；代理商清楚；互相合作才能推广</td>
+        <td><span class="star">★★★★★</span><br>适用于所有行业</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ===== CASE 2: 5维15问方法论 ===== -->
+  <div class="case-hero" style="background:linear-gradient(135deg,var(--teal),var(--teal-light));">
+    <span class="case-tag" style="background:var(--navy);">案例二 · 方法论沉淀</span>
+    <h3>EOS设备换新经验沉淀 — "5维15问"方法论</h3>
+    <p>基于一线实战案例提炼的5维度15个核心问题框架，帮助一线系统化梳理换新项目关键信息，从客户触达到售后复购全链路覆盖。</p>
+  </div>
+
+  <div class="method-grid">
+    <div class="method-card">
+      <div class="method-num">01</div>
+      <h4>客户触点 (WHO & WHERE)</h4>
+      <p class="method-goal">了解销售/技服在哪个环节、以什么方式触达客户，触发换新需求讨论</p>
+      <ul class="method-questions">
+        <li>首次提出"以旧换新"是在什么场景下？（日常巡检/故障报修/续保谈判/客户主动问询/竞品刺激）</li>
+        <li>关键决策人是IT运维、CIO/CTO、还是采购部门？</li>
+        <li>触达后客户第一反应是什么？（感兴趣/抵触/观望）如何应对？</li>
+      </ul>
+      <div class="method-output">预期产出：不同行业"最佳触达场景"清单、关键决策人画像模板、客户抗拒话术应对手册</div>
+    </div>
+    <div class="method-card">
+      <div class="method-num">02</div>
+      <h4>沟通技巧 (HOW TO TALK)</h4>
+      <p class="method-goal">提炼一线在谈判中让客户从"不换"到"换"的关键沟通方法和话术</p>
+      <ul class="method-questions">
+        <li>客户最关心的换新理由是什么？（安全漏洞/性能瓶颈/合规要求/维保到期/成本对比）</li>
+        <li>一线用什么方式让客户认同"现在是换新最佳时机"？（算经济账/风险警示/同行案例）</li>
+        <li>遇到"我们还能用"或"预算不够"时，最有效的说服方式是什么？</li>
+      </ul>
+      <div class="method-output">预期产出：按客户痛点分类的"话术工具箱"、算账模板（TCO对比/安全风险代价）、竞品应对话术</div>
+    </div>
+    <div class="method-card">
+      <div class="method-num">03</div>
+      <h4>引导换新方式 (HOW TO PUSH)</h4>
+      <p class="method-goal">了解一线用什么具体手段、工具、活动引导客户做出换新决策</p>
+      <ul class="method-questions">
+        <li>以旧换新策略（老客户购买订阅型号AF时优惠80%；原VPN采购享1~5折），哪种对客户最有吸引力？</li>
+        <li>是否结合了特定的活动或时间窗口？（等保测评节点/年终预算/维保到期日/上级检查）</li>
+        <li>在保设备被替换，客户的核心驱动是什么？（信创改造强制要求/VPN不再维护/零信迁移/性能不满足新业务）</li>
+      </ul>
+      <div class="method-output">预期产出：换新策略效果情况、时间窗口触发清单、"在保替换"5大场景剧本</div>
+    </div>
+    <div class="method-card">
+      <div class="method-num">04</div>
+      <h4>推动立项方法 (HOW TO CLOSE)</h4>
+      <p class="method-goal">了解从沟通到合同签订、到最终交付的过程中的关键推动手段</p>
+      <ul class="method-questions">
+        <li>客户内部如何走审批流程？（哪个部门发起/需要哪些材料/审批周期多长）</li>
+        <li>一线如何帮助客户"向上汇报"争取预算？（提供的材料/演示/测试报告）</li>
+        <li>从首次接触到签合同，总共经历多久，关键推进节点有哪几个？</li>
+      </ul>
+      <div class="method-output">预期产出：客户内部审批流程图、"帮客户向上汇报"材料包、关键卡点突破案例集</div>
+    </div>
+    <div class="method-card">
+      <div class="method-num">05</div>
+      <h4>售后与复购 (HOW TO RETAIN)</h4>
+      <p class="method-goal">了解换新后客户满意度、是否带来追加订单或转介绍</p>
+      <ul class="method-questions">
+        <li>如果让您总结这次成功最重要的1-2个因素，是什么？</li>
+        <li>是否从单个产品换新延伸为多产品线替换？如何做到的？</li>
+        <li>换新后客户最满意的点是什么？</li>
+      </ul>
+      <div class="method-output">预期产出：满意度反馈案例、产品交叉销售路径、转介绍激励机制</div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ===== FINAL CTA ===== -->
