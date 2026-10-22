@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>把例行巡检变成换新商机｜浙江区 EOS 设备换新标杆案例拆解</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --ink2:#4a4a4a; --ink3:#7a7a7a;
+    --line:#e6e6e6; --line2:#f0f0f0;
+    --brand:#0a5c9e; --brand-soft:#eef5fb;
+    --red:#c0392b; --red-soft:#fdf0ee;
+    --green:#1a7f5a; --green-soft:#eef8f3;
+    --amber:#9a6b00; --amber-soft:#fff8e8;
+    --purple:#5b4bb0; --purple-soft:#f2f0fb;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:#f4f5f6; color:var(--ink); line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px; margin:0 auto; background:#fff; padding:0 0 56px;}
+  .hero{padding:44px 32px 34px; border-bottom:3px solid var(--brand);}
+  .kicker{font-size:13px; color:var(--brand); letter-spacing:2px; font-weight:600; margin-bottom:14px;}
+  .hero h1{font-size:27px; line-height:1.45; font-weight:700; letter-spacing:-.3px;}
+  .hero .sub{font-size:15px; color:var(--ink3); margin-top:14px; line-height:1.7;}
+  .meta{margin-top:20px; padding-top:16px; border-top:1px dashed var(--line); font-size:13px; color:var(--ink3); display:flex; flex-wrap:wrap; gap:8px 18px;}
+
+  section{padding:34px 32px 0;}
+  h2{font-size:20px; font-weight:700; margin-bottom:8px; display:flex; align-items:center; gap:10px;}
+  h2 .num{display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:6px; background:var(--brand); color:#fff; font-size:14px; font-weight:700; flex:none;}
+  .lead{font-size:15.5px; color:var(--ink2); margin:14px 0 18px;}
+  h3{font-size:16.5px; font-weight:700; margin:26px 0 10px; padding-left:11px; border-left:4px solid var(--brand); line-height:1.5;}
+
+  .callout{background:var(--brand-soft); border-left:4px solid var(--brand); padding:16px 18px; border-radius:0 8px 8px 0; margin:18px 0; font-size:15.5px; color:var(--ink); font-weight:600;}
+  .callout.warn{background:var(--amber-soft); border-left-color:var(--amber);}
+  .callout.key{background:var(--green-soft); border-left-color:var(--green);}
+
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:13.5px;}
+  th{background:#f7f8f9; text-align:left; padding:10px 12px; font-weight:700; border:1px solid var(--line); line-height:1.5;}
+  td{padding:10px 12px; border:1px solid var(--line); vertical-align:top; line-height:1.65;}
+  tr:nth-child(even) td{background:#fcfcfd;}
+  td strong{color:var(--brand);}
+
+  .cards{display:grid; gap:12px; margin:18px 0;}
+  .card{border:1px solid var(--line); border-radius:10px; padding:16px 18px; background:#fcfcfd;}
+  .card .t{font-weight:700; font-size:15.5px; margin-bottom:6px;}
+  .card .t span{color:var(--brand); margin-right:6px;}
+  .card .d{font-size:14px; color:var(--ink2);}
+
+  .stat{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:20px 0;}
+  .stat .s{background:var(--brand-soft); border-radius:10px; padding:18px 12px; text-align:center;}
+  .stat .v{font-size:26px; font-weight:700; color:var(--brand); line-height:1.2;}
+  .stat .l{font-size:12.5px; color:var(--ink3); margin-top:6px; line-height:1.5;}
+
+  ol.steps{margin:16px 0 0; padding-left:0; list-style:none; counter-reset:s;}
+  ol.steps li{counter-increment:s; position:relative; padding:14px 0 14px 46px; border-bottom:1px solid var(--line2);}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(s); position:absolute; left:0; top:15px; width:28px; height:28px; border-radius:50%; background:var(--brand); color:#fff; font-size:14px; font-weight:700; display:flex; align-items:center; justify-content:center;}
+  ol.steps li b{display:block; font-size:15.5px; margin-bottom:4px;}
+  ol.steps li span{font-size:14px; color:var(--ink2);}
+
+  .quote{background:#fafafa; border:1px solid var(--line2); border-radius:8px; padding:14px 16px; margin:12px 0; font-size:14px; color:var(--ink2);}
+  .quote b{color:var(--ink);}
+
+  ul.plain{margin:10px 0 0; padding-left:20px; font-size:14.5px; color:var(--ink2);}
+  ul.plain li{margin-bottom:7px;}
+
+  .divider{height:1px; background:var(--line2); margin:34px 32px 0;}
+
+  .do-dont{display:grid; gap:12px; margin:18px 0;}
+  .dd{border-radius:10px; padding:15px 18px; font-size:14px; line-height:1.7;}
+  .dd.bad{background:var(--red-soft); border:1px solid #f3d6d1;}
+  .dd.good{background:var(--green-soft); border:1px solid #cfe9de;}
+  .dd .h{font-weight:700; font-size:14.5px; margin-bottom:6px;}
+  .dd.bad .h{color:var(--red);} .dd.good .h{color:var(--green);}
+
+  .roles{display:grid; gap:12px; margin:18px 0;}
+  .role{border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  .role .rt{font-size:14px; font-weight:700; padding:12px 16px; line-height:1.5;}
+  .role .rd{font-size:13.5px; color:var(--ink2); padding:13px 16px; line-height:1.75; background:#fcfcfd; border-top:1px solid var(--line2);}
+  .role .rd b{color:var(--ink);}
+  .role .badge{display:inline-block; font-size:12px; font-weight:500; padding:2px 9px; border-radius:20px; margin-right:9px; vertical-align:1px;}
+  .role.r1 .rt{background:var(--blue-soft,#eef5fb); color:#0a5c9e;}
+  .role.r1 .badge{background:#0a5c9e; color:#fff;}
+  .role.r2 .rt{background:#eef8f3; color:#1a7f5a;}
+  .role.r2 .badge{background:#1a7f5a; color:#fff;}
+  .role.r3 .rt{background:#f2f0fb; color:#5b4bb0;}
+  .role.r3 .badge{background:#5b4bb0; color:#fff;}
+
+  .cta{background:var(--brand); color:#fff; border-radius:12px; padding:26px 24px; margin:30px 32px 0; text-align:center;}
+  .cta .t{font-size:18px; font-weight:700; margin-bottom:8px;}
+  .cta .d{font-size:14px; opacity:.92; line-height:1.75;}
+
+  footer{padding:26px 32px 0; font-size:13px; color:var(--ink3); text-align:center; line-height:1.8;}
+
+  @media (max-width:600px){
+    .hero{padding:32px 20px 26px;} .hero h1{font-size:22px;}
+    section{padding:28px 20px 0;}
+    .divider{margin:28px 20px 0;}
+    .cta{margin:26px 20px 0; padding:22px 18px;}
+    .stat{grid-template-columns:1fr;}
+    table{font-size:12.5px;} th,td{padding:8px 9px;}
+    .meta{font-size:12px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="kicker">区域标杆案例 · 内部推广</div>
+    <h1>把例行巡检变成换新商机<br>浙江区 EOS 设备换新打法全拆解</h1>
+    <div class="sub">两个真实案例，单笔均达 20 万量级。<br>一套把「技术问题」翻译成「业务影响 + 换新价值」的可复制打法。</div>
+    <div class="meta">
+      <span>来源：浙江区</span>
+      <span>案例客户：XX 市气象局（政府）· XX 学院（教育）</span>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="num">0</span>有效推动链路</h2>
+    <p class="lead">这两个案例最值得全国复制的，不是话术，而是<strong>把「技术问题」翻译成「业务影响 + 换新价值」的有效推动链路</strong>。它的核心环节只有五步：</p>
+
+    <div class="cards">
+      <div class="card"><div class="t"><span>①</span>入口：找一个客户无法拒绝的服务触点</div><div class="d">月度巡检、售后报修、预警修复、XDR 需求对接会——都是客户刚需，师出有名，不会有推销防备。</div></div>
+      <div class="card"><div class="t"><span>②</span>证据：用现场数据替代主观判断</div><div class="d">CPU 长期 70%、IPS 库最后更新停在去年 3 月、半年 6 次工单里 3 次漏判——数字和时间戳，比"设备比较老"有说服力得多。</div></div>
+      <div class="card"><div class="t"><span>③</span>翻译：把EOS 风险绑到客户正在头疼的业务上</div><div class="d">不是"这台设备停售了"，而是"这台 AF 扛不住专项工程 A 的旺季流量""这台旧 AF 接不进 XDR""选课高峰 AD 频繁卡顿"。</div></div>
+      <div class="card"><div class="t"><span>④</span>嫁接：塞进客户已经有的预算科目</div><div class="d">XDR 专项、专项工程 A、护网整改、信创改造、等保测评——钱不从"安全设备运维"出，从专项工程出。</div></div>
+      <div class="card"><div class="t"><span>⑤</span>决策：把技术问题升级为管理问题</div><div class="d">规则库停更后漏判的数据不形成安全日志，出了事查不到，责任说不清；等保测评会被列不符合项。领导怕的不是花钱，是担责。</div></div>
+    </div>
+
+    <div class="callout key">一句话记住：技术语言只打动运维，责任语言才打动领导，预算语言才打动审批。</div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2><span class="num">1</span>案例一：XX 市气象局</h2>
+    <div class="lead">借专项工程 A XDR 预算，以巡检回访带动安全设备换新</div>
+    <div class="stat">
+      <div class="s"><div class="v">20万级</div><div class="l">项目金额（已脱敏）</div></div>
+      <div class="s"><div class="v">4-5 个月</div><div class="l">1 月提出 → 6 月签单</div></div>
+      <div class="s"><div class="v">多产品线</div><div class="l">aTrust / AF / SIP</div></div>
+    </div>
+
+    <p class="lead">客户今年在<strong>专项工程 A</strong>中规划了 XDR 采购需求，预算充足。团队以月度巡检为契机，联合渠道工程师共同拜访。</p>
+
+    <h3>为什么这个契机选得准</h3>
+    <ul class="plain">
+      <li><strong>用服务破冰</strong>：政府和高校客户对纯商业推销接受度不高。以月度巡检、XDR 需求对接、售后报修为名义，是客户刚需的日常服务。</li>
+      <li><strong>借业务窗口带出安全预算</strong>：借"XDR 业务对接需求启动会"的契机，在讨论 XDR 如何落地时自然引出旧 AF 和 SIP 接不进 XDR 的技术瓶颈——<strong>用业务需求倒逼设备换新</strong>，客户接受度极高。</li>
+      <li><strong>不突兀地引入 EOS</strong>：借巡检发现 CPU 过高、并发接近上限、规则库停更等实际瓶颈，让客户自己意识到"设备确实老了"。</li>
+    </ul>
+
+    <h3>现场怎么讲（可复用话术）</h3>
+    <div class="quote"><b>开场切入</b>："姚工（客户运维负责人），这次月度巡检我们提前把所有安全设备的档案信息整理了一遍，包括购买日期、维保到期时间、当前版本和部署位置。发现有几台设备已经 EOS 了，还有几台很久没有续费或已经不支持续费，导致规则库停更很久了。今天想跟您一起过一遍，看看哪些设备需要重点关注。"</div>
+    <div class="quote"><b>呈现台账</b>："您这台 AF 是 2019 年购买的，维保去年就到期了，版本还停在 8.0.x。这台 VPN 已经停止服务了，我们把这些设备标红了，方便您内部对齐时一眼看到风险。"</div>
+    <div class="quote"><b>引导换新（关键：不要求全换）</b>："我们不是让您一次全换，而是先梳理清楚哪些必须换、哪些还能续保。能续保的续保，已退市或高风险的优先换。这样您内部申请预算也有依据。"</div>
+
+    <h3>风险提示的三层递进</h3>
+    <div class="cards">
+      <div class="card"><div class="t">第1 层 · 规则库停更</div><div class="d">"这台 AF 的 IPS 特征库最后一次更新是去年 3 月，现在处于过保状态，病毒库也停更了。新型勒索病毒、APT 变种很快，规则库不更新，等于门锁还在但钥匙没换。"</div></div>
+      <div class="card"><div class="t">第 2 层 · 合规风险</div><div class="d">"等保测评要求安全设备规则库持续更新，停更会被列为不符合项。去年测评机构已经提了整改要求，今年如果不换，可能影响测评结论。"</div></div>
+      <div class="card"><div class="t">第 3 层 · 责任风险（打动领导的关键）</div><div class="d">"规则库停更后，漏判的数据不会形成安全日志。万一出了安全事件，查不到日志，责任不好明确。<strong>把技术问题升级为管理问题</strong>，领导一看就明白为什么要花这笔钱。"</div></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2><span class="num">2</span>案例二：XX 学院</h2>
+    <div class="lead">以售后问题为切入点，用使用痛点引导换新</div>
+    <div class="stat">
+      <div class="s"><div class="v">20-30万级</div><div class="l">项目金额（已脱敏）</div></div>
+      <div class="s"><div class="v">5-6 个月</div><div class="l">3 月接触 → 9 月签单</div></div>
+      <div class="s"><div class="v">6 类设备</div><div class="l">AC/AF/VPN/AD 等</div></div>
+    </div>
+
+    <p class="lead">该校此前已采购深信服 AF、AC、AD、VPN 等较多旧设备，<strong>日常售后问题频发</strong>，设备老化、规则库陈旧、版本低且不支持续费——典型的存量换新目标客户。</p>
+
+    <h3>切入方式：把售后工单变成商机清单</h3>
+    <p class="lead">第一步不是讲 EOS，而是<strong>把近半年的售后工单整理成共性问题台账</strong>，按设备、类型、频次分类：</p>
+    <div class="quote">"陈工（客户运维负责人），这次来处理 AF 的问题，我们顺便把近半年贵校的售后工单整理了一下。发现类似问题出现了 6 次，其中 3 次是规则库过期导致的漏判误判，2 次是版本过低导致的功能受限，还有 1 次是硬件性能不足导致断网。断网处理的话会影响教学和办公。"</div>
+
+    <h3>归纳四类必换设备</h3>
+    <ul class="plain">
+      <li><strong>AC</strong>：规则库停更且不支持续费</li>
+      <li><strong>AF</strong>：版本低、性能不足</li>
+      <li><strong>VPN</strong>：已停止维护</li>
+      <li><strong>AD 应用负载</strong>：设备老旧、性能不足，难以支撑教务、一卡通等系统的高并发和高可用</li>
+    </ul>
+
+    <h3>用数据说明"修不如换"</h3>
+    <p class="lead">处理一次突发故障通常需要停机 <strong>2 小时</strong>，影响教学；换新后 3 年维保，故障率下降，运维压力至少减轻 60%。而且旧设备已无法续费，继续用就是"无保设备"，出故障返厂也不一定有适配配件。</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2><span class="num">3</span>客户说"没预算"，怎么让它拍板</h2>
+    <p class="lead">这是整个案例里最有复制价值的部分。浙江区不是降价、不是逼单，而是<strong>四步把"大额一次性决策"拆掉</strong>：</p>
+
+    <table>
+      <thead><tr><th style="width:15%">障碍</th><th style="width:30%">常规做法</th><th style="width:30%">浙江区做法</th><th style="width:25%">为什么有效</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>没预算科目</strong></td>
+          <td>反复催客户立项</td>
+          <td><strong>换科目，不换总额</strong>：塞进 XDR 专项 / 专项工程 A / 护网整改 / 信创改造</td>
+          <td>钱不从"安全设备运维"出，从专项工程出，<strong>审批路径换了，阻力自然变小</strong></td>
+        </tr>
+        <tr>
+          <td><strong>金额太大</strong></td>
+          <td>死守一次性全换</td>
+          <td><strong>给分期，不给"换/不换"二选一</strong>：先换故障频发的 AD、VPN，再换 AF、AC，两年规划分步实施</td>
+          <td>决策从"一笔大钱"变成"一小步"，客户的<strong>心理责任门槛被拆掉了</strong></td>
+        </tr>
+        <tr>
+          <td><strong>不肯为"旧"付钱</strong></td>
+          <td>讲性能、讲参数</td>
+          <td><strong>算运维账</strong>：一次故障停机 2 小时影响教学；换新后 3 年维保、工单大减；无保设备返厂没配件</td>
+          <td>从"这钱值不值"变成<strong>"不花的代价更大"</strong></td>
+        </tr>
+        <tr>
+          <td><strong>技术说服力不够</strong></td>
+          <td>反复上门</td>
+          <td><strong>把责任上移</strong>：漏判数据不形成安全日志，出了事查不到；等保测评列不符合项，影响学校考核</td>
+          <td>领导怕的不是花钱，是<strong>担责</strong>。这一句话最值钱</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>还有三个补充动作</h3>
+    <div class="cards">
+      <div class="card"><div class="t">分客群沟通，抓关注点差异</div><div class="d"><strong>政府客户重业务稳定性</strong>：多讲业务连续性、等保整改、责任风险。<br><strong>高校客户重技术体验</strong>：运维老师爱研究功能，多讲新版本能力、POC 测试、新旧对比，用技术数据说服。</div></div>
+      <div class="card"><div class="t">借政策与项目窗口放大商机</div><div class="d">信创改造 → 带动 AD / AF / AC；XDR 联动 → 带动 AF / SIP 同步换新；SSL VPN 停止服务 → 整体换零信任。<strong>单点商机放大为多产品线替换。</strong></div></div>
+      <div class="card"><div class="t">预算前介入，帮客户做申报材料</div><div class="d">政府和教育都是预算制，<strong>必须在年度预算编制前沟通</strong>。提前提供设备清单、性能参数、部署架构，方便客户内部申报和领导汇报。</div></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2><span class="num">4</span>浙江区的优秀实践动作</h2>
+    <div class="lead">以下七项动作已在两个真实项目中跑通，每一项都对应明确的可量化效果。<strong>不需要照搬话术，照搬动作即可。</strong></div>
+
+    <table>
+      <thead><tr><th style="width:5%">#</th><th style="width:45%">优秀实践动作</th><th style="width:50%">对应效果</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>拜访前<strong>基于 EOS 看板导出全量清单</strong>：购买日期、维保到期、当前版本、部署位置，EOS 设备标红</td><td><strong>带着结论上门</strong>，沟通有据可依，客户内部对齐时一眼看到风险</td></tr>
+        <tr><td>2</td><td>从不单独推 EOS，全靠客户自己的业务需求引出</td><td>客户<strong>自己得出该换的结论</strong>，推动阻力最小，不是被动接受推销</td></tr>
+        <tr><td>3</td><td>证据全用可验证数据：CPU 长期 70%、IPS 库停在去年 3 月、半年 6 次工单中 3 次漏判</td><td>用<strong>具体数字和时间戳</strong>替代主观判断，把"设备老"变成"风险确凿"</td></tr>
+        <tr><td>4</td><td><strong>预算编制前 6 个月就介入</strong>，帮客户做设备清单、性能参数、部署架构</td><td>客户可直接拿去做<strong>内部申报和领导汇报</strong>，预算落地概率显著提升</td></tr>
+        <tr><td>5</td><td>提供三套方案让客户选：全面换新 / 分期换新 / 维保+部分换新</td><td>客户<strong>掌握选择权</strong>，不再是被逼单；分期方案让大额决策拆成可执行小步</td></tr>
+        <tr><td>6</td><td>一线备好汇报材料，打向分管领导</td><td>从"只跟运维聊"变成<strong>帮客户做内部沟通</strong>，技术问题成功升级为管理问题</td></tr>
+        <tr><td>7</td><td>原厂侧 + 渠道侧双线闭环，责任到人 + 节奏固定</td><td><strong>体系化推进不遗漏</strong>，前线发现的商机不会因为交接断点流失</td></tr>
+      </tbody>
+    </table>
+
+    <h3>内部协同机制：客户服务团队 × 渠道 × 市场，如何分工配合</h3>
+    <p class="lead">EOS 换新不是服务团队一个部门能闭环的事。<strong>服务团队掌握"设备事实"和"客户信任"，渠道掌握"商务关系"和"报价能力"，市场掌握"政策窗口"和"资源审批"</strong>——三方各有一段 indispensable 的能力，缺一段商机就断在这里。</p>
+
+    <div class="roles">
+      <div class="role r1">
+        <div class="rt"><span class="badge">服务团队</span>客户侧<br>信息 originator</div>
+        <div class="rd">
+          <b>掌握：</b>设备台账、巡检现场数据、客户真实使用体验、运维关系<br>
+          <b>做什么：</b>发现风险、采集证据、判断优先级、联合拜访开场<br>
+          <b>交给下游：</b>一份完整的可判断商机（不是一句"客户设备旧了"）
+        </div>
+      </div>
+      <div class="role r2">
+        <div class="rt"><span class="badge">渠道伙伴</span>商务侧<br>关系与交付</div>
+        <div class="rd">
+          <b>掌握：</b>客户商务关系、报价权限、账期与商务条款<br>
+          <b>做什么：</b>接收商机、快速报价、跟进商务流程、协助施行业务资源<br>
+          <b>交给下游：</b>客户预算确认与签单结果
+        </div>
+      </div>
+      <div class="role r3">
+        <div class="rt"><span class="badge">市场/销售</span>策略侧<br>政策与资源</div>
+        <div class="rd">
+          <b>掌握：</b>产品线政策、专项预算池、区域资源与激励<br>
+          <b>做什么：</b>识别政策窗口（信创/护网/等保/专项工程）、申请资源、组织联合拜访<br>
+          <b>交给下游：</b>商机立项与资源保障
+        </div>
+      </div>
+    </div>
+
+    <div class="callout key"><strong>关键认知：</strong>服务团队在 EOS 换新里的最大价值<strong>不是签单，而是"把一台快停售的设备，变成一条有数据、有预算、有决策链的可判断商机"</strong>——这是渠道和市场愿意投入资源的唯一理由。</div>
+
+    <h3>三步协同法：服务团队怎么把渠道和市场拉进来</h3>
+    <div class="do-dont">
+      <div class="dd good">
+        <div class="h">第一步 · 商机建档（服务团队发起）</div>
+        <b>做什么：</b><strong>基于 EOS 看板导出客户全量清单</strong>，梳理购买日期、维保到期、当前版本、部署位置，<strong>EOS 设备标红</strong>，形成在线文档并在数智化平台群内置顶。<br>
+        <b>为什么这么建：</b>标红 + 区分 EOS 与普通维保，让渠道一眼分辨"哪些能修、哪些必须换"，避免双方在同一个客户上重复劳动。<br>
+        <b>协同对象：</b>同步抄送对应销售与区域渠道负责人，把商机从"个人发现"变成"组织可见"。
+      </div>
+      <div class="dd good">
+        <div class="h">第二步 · 双周回收（服务团队牵节奏）</div>
+        <b>做什么：</b>按客户维度，<strong>每两周回收一次商机进展</strong>，与渠道、销售同步当前卡点（预算未定/决策人未接触/技术方案待确认）。<br>
+        <b>为什么是双周：</b>EOS 换新周期普遍 4-6 个月，双周是一个既能推动又不让渠道有压力的节奏。<br>
+        <b>服务团队角色：</b>做<strong>节奏发起方和信息中心</strong>，不是甩单方——持续给渠道提供技术证据和客户现场情报，是渠道愿意持续投入的原因。
+      </div>
+      <div class="dd good">
+        <div class="h">第三步 · 联合突破（三方同行现场）</div>
+        <b>做什么：</b>梳理有望突破的客户名单，<strong>服务团队 + 渠道 + 销售联合去客户现场</strong>，做季度巡检和资产梳理，摸清设备使用体验、预算情况、预算时间点，定点判断哪些产品有换新或续费可能。<br>
+        <b>现场分工：</b>服务团队讲<strong>技术事实</strong>（设备老化的实证）→ 渠道讲<strong>商务方案</strong>（怎么换、怎么付、怎么保障）→ 销售讲<strong>政策与价值</strong>（能借哪个专项、能给什么资源）。<br>
+        <b>收尾动作：</b>回来后及时报价给客户，推动客户预算落地。
+      </div>
+    </div>
+
+    <h3>配套的三条支撑机制</h3>
+    <div class="cards">
+      <div class="card"><div class="t"><span>①</span>周会对齐拜访计划</div><div class="d">销售、技服、售前每周对齐下周工作计划，<strong>技服把客户资产和使用情况主动同步给销售侧</strong>。这是服务团队向市场"输送弹药"的固定管道，避免市场侧信息真空。</div></div>
+      <div class="card"><div class="t"><span>②</span>分产品+ 分存量，双维度铺开</div><div class="d">按产品维度推进（销售第一责任人，如前半个月先覆盖所有 SIP 换新场景，再覆盖 AF 场景）；按存量分级（技服/售前第一责任人，优先覆盖存量大的客户）。<strong>明确到具体销售个人</strong>，不出现"大家都负责= 都没人负责"。</div></div>
+      <div class="card"><div class="t"><span>③</span>借预警修复自然切入</div><div class="d">以 VPN、AF、AC 预警修复为契机（技服第一责任人），向客户同步使用风险，沟通退市版本换新，并引导<strong>把 SSL VPN 整体换为零信任方案</strong>——从单点故障处理自然过渡到架构升级话题。</div></div>
+    </div>
+
+    <div class="callout warn"><strong>客户预算有限时的分工要点：</strong>服务团队负责给"事实"，渠道负责给"分期方案"，销售负责给"预算口子"（对接专项/信创/护网等窗口）。三方合力把"一次大额决策"拆成"两年分步实施"，客户才有拍板的空间。</div>
+
+    <div class="callout">换新原则始终一致：<strong>能续保则续保，已退市或高风险设备优先换新</strong>；借 XDR 联动等新能力带动多设备同步换新，放大单点商机。</div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2><span class="num">5</span>产生的正向结果</h2>
+    <div class="stat">
+      <div class="s"><div class="v">40万+</div><div class="l">两单合计（已脱敏）</div></div>
+      <div class="s"><div class="v">2 个行业</div><div class="l">政府 + 教育 均验证</div></div>
+      <div class="s"><div class="v">多线联动</div><div class="l">aTrust/AF/SIP/AC/AD/VPN</div></div>
+    </div>
+    <ul class="plain">
+      <li><strong>金额</strong>：两单均达 20 万量级（具体金额已脱敏），政府、教育两个行业、两类客户都验证通过。</li>
+      <li><strong>周期</strong>：4-5 个月、5-6 个月——这不是运气好的一单，而是<strong>可持续经营的动作</strong>。</li>
+      <li><strong>产品线带动</strong>：不是单台换新，而是 XDR 联动一次性带起 AF + SIP，多线联动。</li>
+      <li><strong>可沉淀</strong>：形成"客户侧五步法 + 服务/渠道/市场三方协同机制"的标准化打法，全国区域可直接照搬。</li>
+    </ul>
+
+    <h3>适用边界（建议其他区域注意）</h3>
+    <p class="lead">这套打法依赖<strong>预算制 + 等保/合规压力 + 专项项目窗口</strong>三个前提。政府 / 教育客户适配度高；如果是纯商业客户、等保压力弱、也没有专项窗口，则需要把第③ 层的"业务绑定"换成"业务成本 + 体验升级"来切入。</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2><span class="num">6</span>落地行动清单</h2>
+    <p class="lead">读完就可以开始的三件事：</p>
+    <ol class="steps">
+      <li><b>本周内：给你的存量客户建一份设备台账</b><span><strong>基于 EOS 看板，导出全量清单</strong>，梳理购买日期、维保到期、当前版本、部署位置，EOS 设备标红。这是所有后续动作的地基。</span></li>
+      <li><b>本月内：发出第一份商机建档同步</b><span>把台账做成在线文档抄送对应销售与区域渠道负责人，明确"哪些能修、哪些必须换"，并建立双周回收节奏，让渠道和市场从第一周就知道存量在哪。</span></li>
+      <li><b>下次拜访前：准备好三样材料</b><span>设备清单、性能参数对比、部署架构建议。这三样是帮客户内部申报和向领导汇报的弹药，也是最容易被忽略的差异化动作。</span></li>
+    </ol>
+  </section>
+
+  <div class="cta">
+    <div class="t">让例行服务成为商机雷达</div>
+    <div class="d">服务团队的角色不是独自签单，<br>而是把"设备快停售"变成一条有数据、有预算、有决策链的可判断商机，<br>然后把渠道和市场拉进来一起推。</div>
+  </div>
+
+  <footer>
+    浙江区 EOS 设备换新优秀实践案例 · 内部学习材料<br>
+    欢迎各区域结合本地实际复用，落地反馈回传以便持续迭代
+  </footer>
+
+</div>
+</body>
+</html>
