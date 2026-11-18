@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服务续费与 EOS 换新案例整理框架</title>
+<style>
+:root{
+  --navy:#0f2a4a;
+  --navy-2:#12395b;
+  --blue:#1b4f7a;
+  --gold:#e8890c;
+  --gold-soft:#f6b73c;
+  --green:#1a7f5a;
+  --green-bg:#eef7f2;
+  --gold-bg:#fdf6ea;
+  --bg:#f4f6fa;
+  --card:#ffffff;
+  --ink:#232b36;
+  --ink-2:#4a5568;
+  --line:#e4e9f0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:940px;margin:0 auto;padding:0 20px}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0c2238 0%,#12395b 55%,#1b4f7a 100%);
+  color:#fff;padding:52px 0 74px;position:relative;overflow:hidden;
+}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(246,183,60,.22),transparent 70%)}
+.hero::before{content:"";position:absolute;left:-80px;bottom:-160px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(27,79,122,.35),transparent 70%)}
+.hero .wrap{position:relative;z-index:2}
+.tag{display:inline-block;font-size:12.5px;letter-spacing:2px;padding:5px 14px;border-radius:20px;border:1px solid rgba(246,183,60,.55);color:#f6d08a;background:rgba(246,183,60,.10);margin-bottom:20px}
+.hero h1{font-size:28px;font-weight:700;line-height:1.4;letter-spacing:.5px;margin-bottom:14px}
+.hero h1 .gold{color:#f6b73c}
+.hero .sub{font-size:16px;color:#c6d4e4;max-width:640px;line-height:1.8}
+.hero .chips{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+.hero .chip{font-size:13px;color:#e8eef5;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:5px 14px;border-radius:20px}
+
+/* 导航条 */
+.toc{margin-top:-34px;position:relative;z-index:3;background:var(--card);border-radius:14px;box-shadow:0 10px 30px rgba(15,42,74,.10);padding:16px 20px;display:flex;flex-wrap:wrap;gap:10px}
+.toc a{font-size:13.5px;color:var(--blue);text-decoration:none;padding:6px 13px;border-radius:20px;background:#f0f4fa;transition:.15s}
+.toc a:hover{background:var(--navy);color:#fff}
+
+/* 区块 */
+section{padding:44px 0 8px}
+.sec-title{display:flex;align-items:center;gap:12px;font-size:21px;font-weight:700;color:var(--navy);margin-bottom:20px}
+.sec-title::before{content:"";width:5px;height:22px;border-radius:3px;background:linear-gradient(180deg,var(--gold-soft),var(--gold))}
+.sec-title .en{font-size:12px;color:#aab4c2;font-weight:500;letter-spacing:1px;margin-left:auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin-bottom:16px}
+p.lead{font-size:15.5px;color:var(--ink);margin-bottom:10px}
+p.body{font-size:14.5px;color:var(--ink-2);margin-bottom:10px}
+b.hl{color:var(--navy);font-weight:700}
+.goldtxt{color:#b06a07;font-weight:700}
+.greentxt{color:var(--green);font-weight:700}
+
+/* 三条标准 */
+.principle{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:12px}
+.principle .no{flex:none;width:34px;height:34px;border-radius:10px;background:var(--navy);color:#f6b73c;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px}
+.principle h4{font-size:15px;color:var(--navy);margin-bottom:3px}
+.principle p{font-size:13.5px;color:var(--ink-2);margin:0}
+
+/* 七段骨架 */
+.skeleton{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 4px}
+.step{flex:1 1 120px;min-width:110px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 12px;text-align:center;position:relative}
+.step .sn{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#f6b73c;align-items:center;justify-content:center;font-weight:800;font-size:14px;margin:0 auto 8px}
+.step .st{font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.4}
+.step .sd{font-size:11.5px;color:var(--ink-2);margin-top:4px;line-height:1.5}
+.step .arrow{position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:#b9c4d2;font-weight:700;font-size:16px}
+
+/* 框架头 */
+.fw-head{border-radius:14px 14px 0 0;padding:20px 26px;color:#fff;margin-bottom:0}
+.fw-head.eos{background:linear-gradient(135deg,#12395b,#1b4f7a)}
+.fw-head.renew{background:linear-gradient(135deg,#0d4a38,#1a7f5a)}
+.fw-head h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.fw-head p{font-size:14px;opacity:.92;margin:0}
+.fw-body{background:var(--card);border:1px solid var(--line);border-top:none;border-radius:0 0 14px 14px;padding:24px 26px;margin-bottom:26px}
+
+/* 核心逻辑条 */
+.logic{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--gold-bg);border-radius:10px;padding:12px 16px;margin-bottom:18px}
+.logic .lb{font-size:12.5px;font-weight:700;color:#a4630a;flex:none}
+.logic .lstep{font-size:13px;color:#6b5420;font-weight:600;background:#fff;border:1px solid #f0dfb8;padding:4px 10px;border-radius:8px}
+.logic .larr{color:#c9a04a;font-weight:700}
+
+/* 表格 */
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--navy);color:#fff;font-weight:600;letter-spacing:.5px;font-size:13px}
+thead th:first-child{border-radius:8px 0 0 0}
+thead th:last-child{border-radius:0 8px 0 0}
+tbody tr:hover{background:#f7f9fc}
+td b{color:var(--navy)}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:4px}
+
+/* checklist */
+.ck{padding:0;list-style:none}
+.ck li{position:relative;padding:9px 0 9px 32px;font-size:14px;color:var(--ink);border-bottom:1px dashed var(--line)}
+.ck li:last-child{border-bottom:none}
+.ck li::before{content:"✓";position:absolute;left:2px;top:9px;width:20px;height:20px;border-radius:6px;background:var(--green-bg);color:var(--green);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.ck li b{color:var(--navy)}
+.ck-hint{font-size:12.5px;color:#8a96a6;margin:6px 0 0}
+
+/* 参考案例锚点 */
+.anchor{margin-top:16px;padding:13px 16px;border-radius:10px;background:#f0f4fa;border-left:3px solid var(--blue)}
+.anchor .at{font-size:13px;font-weight:700;color:var(--blue);margin-bottom:4px}
+.anchor p{font-size:13.5px;color:var(--ink-2);margin:0}
+
+/* 常见坑 */
+.pitfall{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.pitfall .ic{flex:none;width:30px;height:30px;border-radius:8px;background:#fdeee0;color:#b06a07;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+.pitfall h4{font-size:14.5px;color:var(--navy);margin-bottom:3px}
+.pitfall p{font-size:13.5px;color:var(--ink-2);margin:0}
+
+/* 自检清单 */
+.selfcheck{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
+.selfcheck .grp{margin-bottom:16px}
+.selfcheck .grp h4{font-size:14.5px;color:var(--navy);margin-bottom:6px}
+.selfcheck .grp:last-child{margin-bottom:0}
+
+footer{padding:30px 0 50px;color:#8a96a6;font-size:13px;text-align:center;line-height:1.8}
+footer .line{border-top:1px solid var(--line);padding-top:22px;margin-top:8px}
+
+@media(max-width:720px){
+  .hero h1{font-size:23px}
+  .hero .sub{font-size:14.5px}
+  section{padding:34px 0 4px}
+  .card,.fw-body{padding:18px}
+  .fw-head{padding:16px 18px}
+  .sec-title{font-size:19px}
+  .sec-title .en{display:none}
+  .step .arrow{display:none}
+  .step{flex:1 1 45%}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="tag">案例提炼方法论 · 内部参考</span>
+    <h1>把一线实战，提炼成<span class="gold">可复制的案例</span></h1>
+    <p class="sub">EOS 换新、服务续费两套案例整理框架。帮区域同事把零散的客户信息、动作和结果，梳理成结构清晰、别人看完能照着做的成功案例。</p>
+    <div class="chips">
+      <span class="chip">EOS 换新案例框架</span>
+      <span class="chip">服务续费案例框架</span>
+      <span class="chip">七段式通用骨架</span>
+      <span class="chip">交付前自检清单</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="toc">
+    <a href="#principle">好案例三条标准</a>
+    <a href="#skeleton">七段通用骨架</a>
+    <a href="#eos">EOS 换新框架</a>
+    <a href="#renew">服务续费框架</a>
+    <a href="#pitfall">四个常见坑</a>
+    <a href="#check">交付前自检</a>
+  </div>
+
+  <section id="principle">
+    <div class="sec-title">好案例的三条标准 <span class="en">PRINCIPLE</span></div>
+    <p class="body" style="margin-bottom:16px">在动手写之前，先确认案例值不值得写。真正有参考价值的案例，满足这三条：</p>
+    <div class="principle"><div class="no">1</div><div><h4>有商业结果</h4><p>不是记流水账，要有可量化的成果——金额、续费率、授权点数、合同年限、覆盖设备数。没有数字的案例，等于没有证据。</p></div></div>
+    <div class="principle"><div class="no">2</div><div><h4>有可复制的动作</h4><p>别人看完能照着做。写法要从"我做了什么"转成"你可以怎么做"——把动作抽象成步骤、方法、清单，而不是只讲故事。</p></div></div>
+    <div class="principle"><div class="no">3</div><div><h4>有真实的难点与解法</h4><p>案例的价值在于"卡在哪、怎么破"。一帆风顺的案例没有参考价值；把客户抵触、预算不批、竞品干扰这些真问题讲清楚，解法才站得住。</p></div></div>
+  </section>
+
+  <section id="skeleton">
+    <div class="sec-title">两套框架共用的七段骨架 <span class="en">SKELETON</span></div>
+    <div class="card">
+      <p class="body">EOS 换新和服务续费，套路不同，但提炼结构是一致的——都用下面这七段。区别只在第 3、4 段（挑战和打法）要填的内容。</p>
+      <div class="skeleton">
+        <div class="step"><div class="sn">1</div><div class="st">案例概述</div><div class="sd">一句话讲清 + 核心要素表</div><span class="arrow">→</span></div>
+        <div class="step"><div class="sn">2</div><div class="st">客户背景</div><div class="sd">客户是谁、在网什么</div><span class="arrow">→</span></div>
+        <div class="step"><div class="sn">3</div><div class="st">项目挑战</div><div class="sd">2~3 个真难点</div><span class="arrow">→</span></div>
+        <div class="step"><div class="sn">4</div><div class="st">破局打法</div><div class="sd">3~4 个关键动作</div><span class="arrow">→</span></div>
+        <div class="step"><div class="sn">5</div><div class="st">项目成效</div><div class="sd">量化结果</div><span class="arrow">→</span></div>
+        <div class="step"><div class="sn">6</div><div class="st">可复制打法</div><div class="sd">提炼 4~6 条方法</div><span class="arrow">→</span></div>
+        <div class="step"><div class="sn">7</div><div class="st">复盘启示</div><div class="sd">一句话收束</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="eos">
+    <div class="sec-title">框架一：EOS 换新案例 <span class="en">EOS RENEWAL</span></div>
+    <div class="fw-head eos">
+      <h3>EOS 换新案例</h3>
+      <p>核心逻辑：把"停维风险"变成"换新订单"</p>
+    </div>
+    <div class="fw-body">
+      <div class="logic">
+        <span class="lb">一条主线</span>
+        <span class="lstep">EOS 停维风险</span><span class="larr">→</span>
+        <span class="lstep">政策 / 预算来源</span><span class="larr">→</span>
+        <span class="lstep">风险 + 价值论证</span><span class="larr">→</span>
+        <span class="lstep">渠道协同 + 障碍化解</span><span class="larr">→</span>
+        <span class="lstep">换新立项落地</span>
+      </div>
+      <p class="body" style="margin-bottom:12px"><b class="hl">七段怎么写：</b></p>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th style="width:16%">段落</th><th style="width:40%">要回答的问题</th><th>怎么写</th></tr></thead>
+          <tbody>
+            <tr><td><b>1 案例概述</b></td><td>这是一个什么样的换新？</td><td>一句话 + 核心要素表：客户（脱敏）、行业、换新产品线、EOS 设备数、下单金额、决策链。</td></tr>
+            <tr><td><b>2 客户背景</b></td><td>客户在网资产是什么、认可我们什么？</td><td>列出在网产品线（AF/AC/aTrust/SSL VPN/WOC 等），点出客户认可点（响应快、稳定等）。</td></tr>
+            <tr><td><b>3 项目挑战</b></td><td>换新为什么难？</td><td>2~3 个真难点：EOS 停维风险、预算申报难、客户抵触、友商竞争。</td></tr>
+            <tr><td><b>4 破局打法</b></td><td>靠什么动作突破？</td><td>3~4 个关键动作，每个动作要有"可复制性"——政策窗口、风险+价值论证、渠道共识、障碍化解。</td></tr>
+            <tr><td><b>5 项目成效</b></td><td>换新做到了什么？</td><td>量化：下单金额、换新产品线数量、覆盖设备数、客户关系变化。</td></tr>
+            <tr><td><b>6 可复制打法</b></td><td>别人能抄什么？</td><td>4~6 条方法，每条一句话，动词开头（借政策、用报告、给续费、对渠道…）。</td></tr>
+            <tr><td><b>7 复盘启示</b></td><td>这单最值钱的一点是什么？</td><td>一句话点破本质，不要套话。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="body" style="margin:16px 0 8px"><b class="hl">换新专属要素清单（缺一不可）：</b></p>
+      <ul class="ck">
+        <li>客户名称（已脱敏）、<b>行业 + 区域</b></li>
+        <li><b>换新产品线</b>（AF / AC / aTrust / SSL VPN / WOC / 态势感知…）</li>
+        <li><b>EOS 设备情况</b>：数量、停维时间、不能维修/升级的具体风险</li>
+        <li><b>预算来源</b>：政策窗口（如"光耀申城"）/ 专项 / 客户自筹</li>
+        <li><b>决策链</b>：谁拍板、审批层级、周期</li>
+        <li><b>下单金额</b>（可量化）</li>
+        <li><b>关键转折点</b>：哪个动作/哪句话扭转了局面</li>
+        <li><b>量化材料</b>：EOS 故障率报告、CPU 过载报告、同行业案例</li>
+      </ul>
+      <div class="anchor"><div class="at">↳ 参考锚点</div><p>徐汇教育信息中心案例：借"光耀申城"政策窗口破预算，特批续费 1 年化解抵触，正面回应"谁负责"拿下预算，最终 AF+态势感知 200 万落地。</p></div>
+    </div>
+  </section>
+
+  <section id="renew">
+    <div class="sec-title">框架二：服务续费案例 <span class="en">SERVICE RENEWAL</span></div>
+    <div class="fw-head renew">
+      <h3>服务续费案例</h3>
+      <p>核心逻辑：把"存量服务"变成"续费 / 扩容订单"</p>
+    </div>
+    <div class="fw-body">
+      <div class="logic">
+        <span class="lb">一条主线</span>
+        <span class="lstep">在网价值盘点</span><span class="larr">→</span>
+        <span class="lstep">续费难点识别</span><span class="larr">→</span>
+        <span class="lstep">价值证明 + 风险论证</span><span class="larr">→</span>
+        <span class="lstep">扩容 / 升级方案</span><span class="larr">→</span>
+        <span class="lstep">续费 + 扩容落地</span>
+      </div>
+      <p class="body" style="margin-bottom:12px"><b class="hl">七段怎么写：</b></p>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th style="width:16%">段落</th><th style="width:40%">要回答的问题</th><th>怎么写</th></tr></thead>
+          <tbody>
+            <tr><td><b>1 案例概述</b></td><td>这是一个什么样的续费？</td><td>一句话 + 核心要素表：客户（脱敏）、在网产品线、服务年限、原/新续费金额、授权点数变化。</td></tr>
+            <tr><td><b>2 客户背景</b></td><td>存量资产是什么、服务多久了？</td><td>列在网产品线、授权点数、服务年限、历史合作与认可点。</td></tr>
+            <tr><td><b>3 续费挑战</b></td><td>客户为什么不续 / 想降级？</td><td>2~3 个真难点：预算紧、价值感知弱、竞品低价、服务缺位、业务没痛点。</td></tr>
+            <tr><td><b>4 价值经营打法</b></td><td>靠什么让客户续、还要扩容？</td><td>3~4 个关键动作：价值可视化、风险论证、扩容方案、长期关系维护。</td></tr>
+            <tr><td><b>5 续费成效</b></td><td>续费做到了什么？</td><td>量化：续费金额（原→新）、授权点数增长、续费率、合同锁定年限、产品线扩展。</td></tr>
+            <tr><td><b>6 可复制打法</b></td><td>别人能抄什么？</td><td>4~6 条方法：价值台账、周报证明、风险报告、提前对齐预算…</td></tr>
+            <tr><td><b>7 复盘启示</b></td><td>这单最值钱的一点是什么？</td><td>一句话点破本质。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="body" style="margin:16px 0 8px"><b class="hl">续费专属要素清单（缺一不可）：</b></p>
+      <ul class="ck">
+        <li>客户名称（已脱敏）、<b>行业 + 在网产品线 + 服务年限</b></li>
+        <li><b>授权点数变化</b>（如 1 万点 → 5 万点）</li>
+        <li><b>续费金额变化</b>（数十万 → 百万级，标出增幅）</li>
+        <li><b>续费难点</b>：预算、价值质疑、竞品、历史欠账</li>
+        <li><b>价值证明方式</b>：周报、风险报告、体验改善、故障处置记录</li>
+        <li><b>扩容 / 升级点</b>：授权扩容、产品线扩展、服务升级</li>
+        <li><b>合同锁定年限</b>（多年锁定是亮点）</li>
+      </ul>
+      <div class="anchor"><div class="at">↳ 参考锚点</div><p>某省级电网零信任案例：靠稳定交付建信任、跨厂协同证价值、体验改善被感知，最终 UEM 授权 1 万点扩到 5 万点、续费从数十万做到百万级、单一来源中标。</p></div>
+    </div>
+  </section>
+
+  <section id="pitfall">
+    <div class="sec-title">提炼时的四个常见坑 <span class="en">PITFALLS</span></div>
+    <div class="pitfall"><div class="ic">AI</div><div><h4>AI 味太重</h4><p>避免"本案例完整打法可直接复制到…""以…解决、以…论证、以…放大、以…化解"这类总结腔和长排比；删掉每个动作后机械复述的"关键知识点"。让事实说话，语言朴实。</p></div></div>
+    <div class="pitfall"><div class="ic">密</div><div><h4>没脱敏</h4><p>客户名、真实人名、电话、区域、具体金额等敏感信息要处理——内部交流用"某 XX 客户/某区/某行业"，对外再进一步脱敏。署名保留真实贡献人。</p></div></div>
+    <div class="pitfall"><div class="ic">数</div><div><h4>缺量化数据</h4><p>案例没有金额、点数、年限、设备数，就只剩故事。写之前先问：这单的数字是什么？数字能体现"增长/提升"才是好案例。</p></div></div>
+    <div class="pitfall"><div class="ic">名</div><div><h4>缺署名与结构</h4><p>案例要有贡献人署名（区域+姓名），让荣誉归属清晰；结构按七段走，不要写成流水账或工作日志。</p></div></div>
+  </section>
+
+  <section id="check">
+    <div class="sec-title">案例交付前自检 <span class="en">CHECKLIST</span></div>
+    <div class="selfcheck">
+      <div class="grp"><h4>内容完整性</h4><ul class="ck">
+        <li>七段是否齐全（概述 / 背景 / 挑战 / 打法 / 成效 / 可复制 / 启示）？</li>
+        <li>核心要素表是否填满（客户、产品线、金额、决策链…）？</li>
+        <li>成效是否有<b>量化数字</b>，而非只有"效果良好"？</li>
+      </ul></div>
+      <div class="grp"><h4>可复制性</h4><ul class="ck">
+        <li>破局动作是否抽象成了<b>别人能照做的方法</b>？</li>
+        <li>挑战是否写出了<b>真实难点</b>（而不是一笔带过）？</li>
+        <li>第 6 段是否提炼出 4~6 条<b>动词开头的打法</b>？</li>
+      </ul></div>
+      <div class="grp"><h4>表达与合规</h4><ul class="ck">
+        <li>是否去除了 AI 味（总结腔、排比、机械复述）？</li>
+        <li>客户名、人名、电话、金额是否已<b>脱敏</b>？</li>
+        <li>是否已补<b>贡献人署名</b>？</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="line">
+      深信服 · 服务产品与规划 &nbsp;|&nbsp; 区域案例提炼方法论 · 内部参考<br>
+      覆盖框架：EOS 换新案例 · 服务续费案例 &nbsp;|&nbsp; 整理日期：2026 年 11 月<br>
+      本页为内部交流使用，请勿外传。
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
